@@ -3,7 +3,12 @@ import React from 'react';
 export default class ProjectItem extends React.Component{
     render(){
         return(
-            <h3>Project</h3>
+            <div className="project_item">
+                <div>id</div>
+                <div>Name</div>
+                <button>details</button>
+                <button>issuess</button>
+            </div>
         )
     }
 }

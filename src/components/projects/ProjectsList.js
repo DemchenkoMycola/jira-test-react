@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectItem from './ProjectItem'
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class ProjectsList extends React.Component {
     render(){

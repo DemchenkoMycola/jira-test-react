@@ -1,0 +1,32 @@
+body{
+    text-align: center;
+}
+
+.button{
+    margin: 5px;
+}
+
+/* .modal{
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    background: #eee;
+    border: 2px solid #fefefe;
+} */
+
+.login_form, .issues_form, .projects_form{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    width: 50%;
+    margin: auto;
+}
+
+.project_item{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #efefef;
+}
