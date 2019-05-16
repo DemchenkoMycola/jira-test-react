@@ -1,16 +1,29 @@
 import React from 'react';
-import ProjectItem from './ProjectItem'
-import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import ProjectItem from './ProjectItem';
 
-export default class ProjectsList extends React.Component {
-    render(){
+const ProjectsList = (props) => {
+
+        let projects = props.projects;
+
         return (
             <div>
-                <ProjectItem />
-                <ProjectItem />
-                <ProjectItem />
-                <Link to="/issues">isuues</Link>
+               {
+                projects.map(project => 
+                        <ProjectItem 
+                            key={`${project.id}${project.name}`}
+                            project={project}
+                        />
+                    )
+               }
             </div>
         )
+} 
+
+const mapStateToProps = (state) => {
+    return {
+        projects: state.projects
     }
 }
+
+export default connect(mapStateToProps)(ProjectsList);

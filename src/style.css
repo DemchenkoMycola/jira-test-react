@@ -4,16 +4,28 @@ body{
 
 .button{
     margin: 5px;
+    border: 2px solid #0c0c0c;
 }
 
-/* .modal{
+.button:hover{
+    background: #0c0c0c;
+    color: #eee;
+}
+
+.modal{
     position: fixed;
-    width: 50%;
-    height: 50%;
-    margin-left: 25%;
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     background: #eee;
     border: 2px solid #fefefe;
-} */
+}
+
+.close_modal{
+    position: absolute;
+    right: 10px;
+}
 
 .login_form, .issues_form, .projects_form{
     display: flex;
@@ -29,4 +41,11 @@ body{
     margin: 10px;
     padding: 10px;
     border: 2px solid #efefef;
+}
+
+.issue_item{
+    border: 3px solid #0c0c0c;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
 }

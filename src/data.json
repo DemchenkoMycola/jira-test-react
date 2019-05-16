@@ -1,0 +1,86 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "mame": "Mycola",
+      "email": "demchenkomucola@gmail.com",
+      "password": "1234",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "Leonid",
+      "email": "blablabla@gmail.com",
+      "password": "4321",
+      "role": "user"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "project 1",
+      "description": "description to project 1",
+      "link": "http://google.com",
+      "users": ["1", "2"]
+    },
+    {
+      "id": "2",
+      "title": "project 2",
+      "description": "description to project 3",
+      "link": "http://google.com",
+      "users": ["1", "2"]
+    }
+  ],
+  "issues": [
+    {
+      "id": "1",
+      "title": "issue 1 title",
+      "description": "Issue 1 description",
+      "project_id": "1",
+      "creator_id": "1",
+      "date_created": "",
+      "date_updated": "",
+      "assigree": ["1", "2"]
+    },
+    {
+      "id": "2",
+      "title": "issue 1 title",
+      "description": "Issue 1 description",
+      "project_id": "1",
+      "creator_id": "1",
+      "date_created": "",
+      "date_updated": "",
+      "assigree": ["1", "2"]
+    },
+    {
+      "id": "3",
+      "title": "issue 1 title",
+      "description": "Issue 1 description",
+      "project_id": "1",
+      "creator_id": "1",
+      "date_created": "",
+      "date_updated": "",
+      "assigree": ["1", "2"]
+    },
+    {
+      "id": "4",
+      "title": "issue 1 title",
+      "description": "Issue 1 description",
+      "project_id": "1",
+      "creator_id": "1",
+      "date_created": "",
+      "date_updated": "",
+      "assigree": ["1", "2"]
+    },
+    {
+      "id": "5",
+      "title": "issue 1 title",
+      "description": "Issue 1 description",
+      "project_id": "1",
+      "creator_id": "1",
+      "date_created": "",
+      "date_updated": "",
+      "assigree": ["1", "2"]
+    }
+  ]
+}

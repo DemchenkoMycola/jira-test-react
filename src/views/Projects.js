@@ -1,23 +1,37 @@
 import React from 'react'
 import ProjectsList from '../components/projects/ProjectsList';
+import AddProjects from '../components/projects/AddProjects';
 
 export default class Projects extends React.Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            showModal: false
+        }
+
+        this.showModal = this.showModal.bind(this);
+
+    }
+
+    showModal(){
+        this.setState({
+            showModal: !this.state.showModal
+        })
+    }
 
     render(){
         return(
             <div>
-                <div className="modal">
-                    <section className="modal projects_form">
-                        <legend>Add project</legend>
-                        <label>Title</label>
-                        <input type="text" placeholder="title"/>
-                        <label>Description</label>
-                        <input type="text" placeholder="description"/>
-                        <label>Link to docs</label>
-                        <input type="text" placeholder="link to docs"/>
-                        <button>add</button>
-                    </section>
-                </div>
+                {
+                    this.state.showModal ?
+                        <AddProjects showModal={this.showModal} />
+                    : <button 
+                        onClick={this.showModal}
+                        className="button"
+                        >add project</button>
+                }
+                
                 <ProjectsList />
             </div>
         )

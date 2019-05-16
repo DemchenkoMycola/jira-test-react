@@ -1,14 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
-export default class ProjectItem extends React.Component{
-    render(){
+const ProjectItem = (props) => {
+
+        let {id, title} = props.project;
+
         return(
             <div className="project_item">
-                <div>id</div>
-                <div>Name</div>
+                <div>{id}</div>
+                <div>{title}</div>
                 <button>details</button>
-                <button>issuess</button>
+                <Link to={`/issues/${id}`}>to project</Link>
+                <button>del</button>
             </div>
         )
-    }
 }
+
+export default ProjectItem;
