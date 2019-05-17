@@ -9,11 +9,12 @@ const IssuesList = (props) => {
     return (
         <div>
             {
-                issues.map(issue => 
-                    <IssueItem 
-                    key={`${issue.id}${issue.title}`} 
-                    issue={issue} 
-                    />   
+                issues.filter(issue => props.project_id === issue.project_id)
+                .map(issue => 
+                        <IssueItem 
+                        key={`${issue.id}${issue.title}`} 
+                        issue={issue} 
+                        />   
                 )
             }
         </div>

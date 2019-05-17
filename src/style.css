@@ -27,7 +27,7 @@ body{
     right: 10px;
 }
 
-.login_form, .issues_form, .projects_form{
+.login_form, .register_form, .issues_form, .projects_form{
     display: flex;
     flex-direction: column;
     padding: 50px;
@@ -47,5 +47,29 @@ body{
     border: 3px solid #0c0c0c;
     margin: 10px;
     display: flex;
+    padding: 10px;
     justify-content: space-between;
+}
+
+.auth_section{
+    background: #ccf;
+}
+
+.auth_nav{
+    justify-content: center;
+    list-style-type: none;
+    display: flex;
+}
+
+.auth_item{
+    flex-basis: 50%;
+    background: #ccf;
+}
+
+.auth_nav .active{
+    background: #cfc;
+}
+
+.auth_nav .active:hover{
+    background: #fcc;
 }

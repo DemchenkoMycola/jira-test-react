@@ -4,9 +4,9 @@ import Home from './views/Home'
 import Projects from './views/Projects'
 import Issues from './views/Issues'
 
-class App extends React.Component {
-  render(){
+const App = () => {
     return (
+      <main>
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -14,8 +14,9 @@ class App extends React.Component {
             <Route path="/issues/:id" component={Issues} />
           </Switch>
         </Router>
+      </main>
+
     );
-  }
 }
 
 export default App;

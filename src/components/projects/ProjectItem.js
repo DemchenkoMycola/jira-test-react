@@ -11,7 +11,7 @@ const ProjectItem = (props) => {
                 <div>{title}</div>
                 <button>details</button>
                 <Link to={`/issues/${id}`}>to project</Link>
-                <button>del</button>
+                {/* <button onClick={props.deleteProject}>del</button> */}
             </div>
         )
 }
