@@ -59,6 +59,7 @@ body{
     justify-content: center;
     list-style-type: none;
     display: flex;
+    padding: 0;
 }
 
 .auth_item{

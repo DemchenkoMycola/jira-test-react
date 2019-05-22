@@ -12,4 +12,4 @@ export const deleteProject = (id) => {
         type: actionTypes.DEL_PROJECT,
         id
     }
-}
+};

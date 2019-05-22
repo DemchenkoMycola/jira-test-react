@@ -1,5 +1,6 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom'
+import {connect} from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component{
     constructor(props){
@@ -15,6 +16,10 @@ class Login extends React.Component{
         this.handlePassword = this.handlePassword.bind(this);
     }
 
+    handleUser(){
+        console.log(this.props.users)
+    }
+
     handleLogin(){
             this.setState({
                 login: true
@@ -25,6 +30,7 @@ class Login extends React.Component{
         this.setState({
             name: event.target.value
         })
+        this.handleUser();
     }
 
     handlePassword(event){
@@ -68,4 +74,11 @@ class Login extends React.Component{
     }
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+    return{
+        users: state.users
+    }
+}
+
+
+export default connect(mapStateToProps)(Login);

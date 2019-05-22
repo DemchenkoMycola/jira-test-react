@@ -4,8 +4,8 @@ import Register from '../components/Register';
 
 export default class Home extends React.Component{
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             login_mode: true
         }

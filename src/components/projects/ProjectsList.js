@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProjectItem from './ProjectItem';
-import * as projectAction from '../../actions/projectsAction';
+import { deleteProject }  from '../../actions/projectsAction';
 
 const ProjectsList = (props) => {
 
@@ -12,8 +12,7 @@ const ProjectsList = (props) => {
             console.log(e)
             props.deleteProject(index);
         }
-
-        // console.log(props);
+        
 
         return (
             <div>
@@ -39,7 +38,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        daleteProject: index => dispatch(projectAction.deleteProject(index))
+        daleteProject: index => dispatch(deleteProject(index))
     }
 }
 
