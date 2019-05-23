@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login render login form 1`] = `
+<div>
+  <section
+    className="login_form"
+  >
+    <legend>
+      Login
+    </legend>
+    <div
+      className="errors"
+    >
+      
+    </div>
+    <label>
+      Name
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="name"
+      type="text"
+      value=""
+    />
+    <label>
+      Password
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="password"
+      type="password"
+      value=""
+    />
+    <button
+      className="button"
+      disabled={true}
+      onClick={[Function]}
+      type="submit"
+    >
+      Login
+    </button>
+  </section>
+</div>
+`;

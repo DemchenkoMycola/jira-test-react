@@ -43,6 +43,11 @@ body{
     border: 2px solid #efefef;
 }
 
+.project_details{
+    text-align: left;
+    margin: 10px 50px;
+}
+
 .issue_item{
     border: 3px solid #0c0c0c;
     margin: 10px;

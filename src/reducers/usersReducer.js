@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 const initUsers = [
     {
         "id": "1",
-        "mame": "Mycola",
+        "name": "Mycola",
         "email": "demchenkomucola@gmail.com",
         "password": "1234",
         "role": "admin"
@@ -12,6 +12,13 @@ const initUsers = [
         "id": "2",
         "name": "Leonid",
         "email": "blablabla@gmail.com",
+        "password": "4321",
+        "role": "user"
+      },
+      {
+        "id": "3",
+        "name": "Max",
+        "email": "max@gmail.com",
         "password": "4321",
         "role": "user"
       }

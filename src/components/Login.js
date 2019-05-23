@@ -9,28 +9,50 @@ class Login extends React.Component{
             name: '',
             password: '',
             login: false,
+            user: {},
+            errors: '',
         }
 
         this.handleLogin = this.handleLogin.bind(this);
         this.handleName = this.handleName.bind(this);
         this.handlePassword = this.handlePassword.bind(this);
+        this.handleUser = this.handleUser.bind(this);
     }
 
-    handleUser(){
-        console.log(this.props.users)
+    handleUser(name){
+        let  users  = this.props.users;
+        let user = users.find((user) => 
+            user.name === name || user.email === name
+        )
+        
+        if(user){
+            // console.log(user)
+            this.setState({
+                user: user
+            })
+        }
+
     }
 
     handleLogin(){
-            this.setState({
-                login: true
-            })
+
+            if(this.state.user.password === this.state.password){
+                this.setState({
+                    login: true
+                })
+            }else{
+                this.setState({
+                    errors: "incorect username or password"
+                })
+            }
     }
 
     handleName(event){
+        let name = event.target.value
         this.setState({
-            name: event.target.value
+            name: name
         })
-        this.handleUser();
+        this.handleUser(name);
     }
 
     handlePassword(event){
@@ -41,7 +63,7 @@ class Login extends React.Component{
 
     render(){
         if(this.state.login){
-            return <Redirect to="/projects" />
+            return <Redirect to={`/projects/${this.state.user.id}`} />
         }
         return(
             <div>

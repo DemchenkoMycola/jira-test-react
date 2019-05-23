@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`home page render without cra 1`] = `
+exports[`app render without crashing 1`] = `
 <main>
   <section
     className="auth_section"
@@ -32,72 +32,9 @@ exports[`home page render without cra 1`] = `
         </legend>
         <div
           className="errors"
-        />
-        <label>
-          Name
-        </label>
-        <input
-          onChange={[Function]}
-          placeholder="name"
-          type="text"
-          value=""
-        />
-        <label>
-          Password
-        </label>
-        <input
-          onChange={[Function]}
-          placeholder="password"
-          type="password"
-          value=""
-        />
-        <button
-          className="button"
-          disabled={true}
-          onClick={[Function]}
-          type="submit"
         >
-          Login
-        </button>
-      </section>
-    </div>
-  </section>
-</main>
-`;
-
-exports[`home page render without crashing 1`] = `
-<main>
-  <section
-    className="auth_section"
-  >
-    <nav>
-      <ul
-        className="auth_nav"
-      >
-        <li
-          className="auth_item "
-          onClick={[Function]}
-        >
-          Login
-        </li>
-        <li
-          className="auth_item active"
-          onClick={[Function]}
-        >
-          Register
-        </li>
-      </ul>
-    </nav>
-    <div>
-      <section
-        className="login_form"
-      >
-        <legend>
-          Login
-        </legend>
-        <div
-          className="errors"
-        />
+          
+        </div>
         <label>
           Name
         </label>

@@ -14,6 +14,13 @@ const initProjects = [
         "description": "description to project 3",
         "link": "http://google.com",
         "users": ["1", "2"]
+      },
+      {
+        "id": "3",
+        "title": "project test",
+        "description": "description to project 3",
+        "link": "http://google.com",
+        "users": ["1", "2", '3']
       }
 ];
 

@@ -1,28 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProjectItem from './ProjectItem';
-import { deleteProject }  from '../../actions/projectsAction';
 
 const ProjectsList = (props) => {
 
         let projects = props.projects;
+        let userId = props.userId
 
-        const deleteProject = (e, index) =>{
-            e.preventDefault();
-            console.log(e)
-            props.deleteProject(index);
-        }
         
+
 
         return (
             <div>
                {
-                projects.map((project, index) => 
+                projects.filter(project => project.users.findIndex(id => id === userId) >= 0)
+                .map((project, index) => 
                         <ProjectItem 
                             key={`${project.id}${project.name}`}
                             project={project}
                             index={index}
-                            deleteProject={(e) => deleteProject(e, index)}
                         />
                     )
                }
@@ -36,10 +32,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        daleteProject: index => dispatch(deleteProject(index))
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectsList);
+
+export default connect(mapStateToProps)(ProjectsList);

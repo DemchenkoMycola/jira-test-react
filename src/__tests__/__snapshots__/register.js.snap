@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`register render register form 1`] = `
+<section
+  className="register_form"
+>
+  <legend>
+    Register
+  </legend>
+  <label>
+    Username
+  </label>
+  <input
+    name="username"
+    onChange={[Function]}
+    placeholder="username"
+    type="text"
+  />
+  <label>
+    Email
+  </label>
+  <input
+    name="email"
+    onChange={[Function]}
+    placeholder="email"
+    type="email"
+  />
+  <label>
+    Password
+  </label>
+  <input
+    name="passowrd"
+    onChange={[Function]}
+    placeholder="password"
+    type="password"
+  />
+  <button
+    onClick={[Function]}
+  >
+    register
+  </button>
+</section>
+`;

@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-describe('home page', () =>{
+describe('app', () =>{
     const store = createStore(() => ({}));
 
     it('render without crashing', () =>{
@@ -15,4 +15,5 @@ describe('home page', () =>{
             .toJSON();
         expect(app).toMatchSnapshot()
     });
+
 });

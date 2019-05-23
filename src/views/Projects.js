@@ -7,7 +7,8 @@ export default class Projects extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            showModal: false
+            showModal: false,
+            user_id: props.match.params.userId
         }
 
         this.showModal = this.showModal.bind(this);
@@ -32,7 +33,7 @@ export default class Projects extends React.Component{
                         >add project</button>
                 }
                 
-                <ProjectsList />
+                <ProjectsList userId={this.state.user_id} />
             </div>
         )
     }

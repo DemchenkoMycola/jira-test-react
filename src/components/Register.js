@@ -12,7 +12,6 @@ class Register extends React.Component{
             password: '',
         }
 
-        console.log(this.props)
         this.handleName = this.handleName.bind(this);
         this.handleEmail = this.handleEmail.bind(this);
         this.handlePassword = this.handlePassword.bind(this);
