@@ -4,5 +4,6 @@ export const DEL_PROJECT = 'DEL_PROJECT'
 
 export const GET_ALL_ISSUES = 'GET_ALL_ISSUES'
 export const ADD_ISSUE = 'ADD_ISSUE'
+export const UPDATE_STATUS = 'UPDATE_STATUS'
 
 export const ADD_USER = 'ADD_USER'

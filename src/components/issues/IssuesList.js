@@ -1,10 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import IssueItem from './IssueItem';
+import { updateStatus } from '../../actions/issueActions';
 
 const IssuesList = (props) => {
 
     let issues = props.issues;
+
+    const handleStatus = (id, status) => {
+        // console.log(id, status)
+        props.updateStatus(id, status);
+    }
 
     return (
         <div>
@@ -13,7 +19,8 @@ const IssuesList = (props) => {
                 .map(issue => 
                         <IssueItem 
                         key={`${issue.id}${issue.title}`} 
-                        issue={issue} 
+                        issue={issue}
+                        handleStatus={handleStatus}
                         />   
                 )
             }
@@ -21,11 +28,15 @@ const IssuesList = (props) => {
     )
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return{
+        updateStatus: (id, status) => dispatch(updateStatus(id, status))
+    }
+}
+
 const mapStateToProps = (state) => {
     return {
         issues: state.issues
     }
 }
-
-
-export default connect(mapStateToProps)(IssuesList);
+export default connect(mapStateToProps, mapDispatchToProps)(IssuesList);

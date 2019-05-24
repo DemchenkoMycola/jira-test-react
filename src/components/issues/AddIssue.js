@@ -31,7 +31,6 @@ class AddIssue extends React.Component{
     }
 
     handleSubmit(e){
-        console.log(this.props);
         e.preventDefault();
         this.props.addIssue(this.state);
     }
@@ -51,7 +50,7 @@ class AddIssue extends React.Component{
                     onChange={this.handleDescription} 
                     type="text" 
                     placeholder="description" />
-                <button onClick={this.handleSubmit} >add</button>
+                <button disabled={!this.state.title} onClick={this.handleSubmit} >add</button>
             </div>
         )
     }
