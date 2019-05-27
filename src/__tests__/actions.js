@@ -42,6 +42,19 @@ describe('issues actions', () => {
 
         expect(issuesActions.createIssue(issue)).toEqual(expectAction)
     });
+
+    it('should update issue status', () => {
+        const status = 'completed';
+        const issue_id = '1';
+        const expectAction = {
+            type: types.UPDATE_STATUS,
+            status, 
+            issue_id
+        }
+
+        expect(issuesActions.updateStatus(issue_id, status)).toEqual(expectAction);
+    });
+
 });
 
 describe('user actions', () => {

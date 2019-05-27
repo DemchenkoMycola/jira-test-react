@@ -4,10 +4,9 @@ import Adapter from 'enzyme-adapter-react-16';
 import { MemoryRouter } from 'react-router';
 import { Provider } from 'react-redux';
 import Home from '../views/Home';
+import Projects from '../views/Projects';
 import NoMatch from '../views/NoMatch';
 import { createStore } from 'redux';
-
-Enzyme.configure({ adapter: new Adapter() })
 
 describe('test router', () => {
 

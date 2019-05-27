@@ -8,8 +8,8 @@ describe('register', () => {
     const store = createStore(() => ({}));
 
     test('render register form', () => {
-        const login = renderer.create(<Register store={store} />);
-        expect(login).toMatchSnapshot();
+        const register = renderer.create(<Register store={store} />);
+        expect(register).toMatchSnapshot();
     });
 
 });

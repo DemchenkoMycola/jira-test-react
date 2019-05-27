@@ -7,9 +7,6 @@ const ProjectsList = (props) => {
         let projects = props.projects;
         let userId = props.userId
 
-        
-
-
         return (
             <div>
                {
