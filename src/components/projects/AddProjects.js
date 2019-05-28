@@ -12,6 +12,7 @@ class AddProject extends React.Component{
             title: '',
             description: '',
             link: '',
+            users: [this.props.userId]
         }
 
         this.handleAdd = this.handleAdd.bind(this);
@@ -40,6 +41,7 @@ class AddProject extends React.Component{
 
     handleAdd(e){
         e.preventDefault();
+        // console.log(this.state)
         this.props.createProject(this.state);
         this.props.showModal();
     }
@@ -54,18 +56,21 @@ class AddProject extends React.Component{
                     <legend>Add project</legend>
                     <label>Title</label>
                     <input 
+                        className="input"                       
                         onChange={this.handleTitle} 
                         type="text" 
                         name="title" 
                         placeholder="title"/>
                     <label>Description</label>
                     <input 
+                        className="input"
                         onChange={this.handleDescription} 
                         type="text" 
                         name="description" 
                         placeholder="description"/>
                     <label>Link to docs</label>
                     <input
+                        className="input"
                         onChange={this.handleLink} 
                         type="text" 
                         name="link" 

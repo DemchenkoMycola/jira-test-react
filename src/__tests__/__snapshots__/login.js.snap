@@ -17,6 +17,7 @@ exports[`login render login form 1`] = `
       Name
     </label>
     <input
+      className="input"
       onChange={[Function]}
       placeholder="name"
       type="text"
@@ -26,6 +27,7 @@ exports[`login render login form 1`] = `
       Password
     </label>
     <input
+      className="input"
       onChange={[Function]}
       placeholder="password"
       type="password"

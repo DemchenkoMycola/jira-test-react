@@ -12,6 +12,21 @@ body{
     color: #eee;
 }
 
+.new_project{
+  background: #28a745;
+  color: #fff;
+}
+
+.del_button{
+    background: #fc1234;
+    color: #fff;
+}
+
+.del_button:hover{
+    background: #cf4321;
+    color: #fff;
+}
+
 .modal{
     position: fixed;
     width: 90%;
@@ -78,4 +93,14 @@ body{
 
 .auth_nav .active:hover{
     background: #fcc;
+}
+
+.input{
+    height: 25px;
+    font-size: 21px;
+    margin: 5px;
+}
+
+.errors{
+    color: red;
 }

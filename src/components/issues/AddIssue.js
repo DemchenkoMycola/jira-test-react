@@ -33,6 +33,11 @@ class AddIssue extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.props.addIssue(this.state);
+        this.setState({
+            title: '',
+            description: '',
+            project_id: this.props.project_id,
+        })
     }
 
     render(){
@@ -42,13 +47,17 @@ class AddIssue extends React.Component{
                 <legend>Add issue</legend>
                 <label>Title</label>
                 <input
+                    className="input"
                     onChange={this.handleTitle} 
-                    type="text" 
+                    type="text"
+                    value={this.state.title}
                     placeholder="title" />
                 <label>Description</label>
                 <input
+                    className="input"            
                     onChange={this.handleDescription} 
                     type="text" 
+                    value={this.state.description}
                     placeholder="description" />
                 <button disabled={!this.state.title} onClick={this.handleSubmit} >add</button>
             </div>

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`projects should render project from 1`] = `
+<div
+  className="modal"
+>
+  <button
+    className="button close_modal"
+  >
+    close
+  </button>
+  <form
+    className="projects_form"
+    onSubmit={[Function]}
+  >
+    <legend>
+      Add project
+    </legend>
+    <label>
+      Title
+    </label>
+    <input
+      className="input"
+      name="title"
+      onChange={[Function]}
+      placeholder="title"
+      type="text"
+    />
+    <label>
+      Description
+    </label>
+    <input
+      className="input"
+      name="description"
+      onChange={[Function]}
+      placeholder="description"
+      type="text"
+    />
+    <label>
+      Link to docs
+    </label>
+    <input
+      className="input"
+      name="link"
+      onChange={[Function]}
+      placeholder="link to docs"
+      type="text"
+    />
+    <button
+      disabled={true}
+      type="submit"
+    >
+      add
+    </button>
+  </form>
+</div>
+`;

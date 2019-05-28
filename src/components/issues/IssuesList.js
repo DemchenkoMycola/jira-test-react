@@ -7,22 +7,27 @@ const IssuesList = (props) => {
 
     let issues = props.issues;
 
+    // Filter issues by project
+
+    issues = issues.filter(issue => props.project_id === issue.project_id)
+
     const handleStatus = (id, status) => {
-        // console.log(id, status)
         props.updateStatus(id, status);
     }
 
     return (
         <div>
             {
-                issues.filter(issue => props.project_id === issue.project_id)
-                .map(issue => 
+            issues.length > 0 ?
+                issues.map(issue => 
                         <IssueItem 
                         key={`${issue.id}${issue.title}`} 
                         issue={issue}
                         handleStatus={handleStatus}
                         />   
                 )
+            :
+            <p>No issues</p>
             }
         </div>
     )

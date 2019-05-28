@@ -7,32 +7,48 @@ exports[`register render register form 1`] = `
   <legend>
     Register
   </legend>
+  <span
+    className="errors"
+  >
+    
+  </span>
+  <span
+    className="messages"
+  >
+    
+  </span>
   <label>
     Username
   </label>
   <input
+    className="input"
     name="username"
     onChange={[Function]}
     placeholder="username"
     type="text"
+    value=""
   />
   <label>
     Email
   </label>
   <input
+    className="input"
     name="email"
     onChange={[Function]}
     placeholder="email"
     type="email"
+    value=""
   />
   <label>
     Password
   </label>
   <input
+    className="input"
     name="passowrd"
     onChange={[Function]}
     placeholder="password"
     type="password"
+    value=""
   />
   <button
     onClick={[Function]}

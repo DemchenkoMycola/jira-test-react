@@ -72,6 +72,7 @@ class Login extends React.Component{
                     <div className="errors">{this.state.errors}</div>
                     <label>Name</label>
                     <input 
+                        className="input"
                         type="text" 
                         placeholder="name"
                         onChange={this.handleName}
@@ -79,6 +80,7 @@ class Login extends React.Component{
                         />
                     <label>Password</label>                    
                     <input 
+                        className="input"
                         type="password" 
                         placeholder="password" 
                         onChange={this.handlePassword}

@@ -26,11 +26,11 @@ export default class Projects extends React.Component{
             <div>
                 {
                     this.state.showModal ?
-                        <AddProjects showModal={this.showModal} />
+                        <AddProjects userId={this.state.user_id} showModal={this.showModal} />
                     : <button 
                         onClick={this.showModal}
-                        className="button"
-                        >add project</button>
+                        className="button new_project"
+                        >new project</button>
                 }
                 
                 <ProjectsList userId={this.state.user_id} />

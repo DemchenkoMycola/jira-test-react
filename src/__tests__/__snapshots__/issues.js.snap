@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`issues should render project from 1`] = `
+<div
+  className="issues_form"
+>
+  <legend>
+    Add issue
+  </legend>
+  <label>
+    Title
+  </label>
+  <input
+    className="input"
+    onChange={[Function]}
+    placeholder="title"
+    type="text"
+  />
+  <label>
+    Description
+  </label>
+  <input
+    className="input"
+    onChange={[Function]}
+    placeholder="description"
+    type="text"
+  />
+  <button
+    disabled={true}
+    onClick={[Function]}
+  >
+    add
+  </button>
+</div>
+`;

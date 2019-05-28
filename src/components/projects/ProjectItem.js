@@ -12,12 +12,18 @@ class ProjectItem extends React.Component {
         }
 
         this.showDetails = this.showDetails.bind(this);
+        this.deleteProject = this.deleteProject.bind(this);
     }    
 
     showDetails(){
         this.setState({
             showDetails: !this.state.showDetails
         })
+    }
+
+    deleteProject(){
+        let id = this.props.project.id;
+        this.props.deleteProject(id)
     }
 
     render(){
@@ -33,8 +39,13 @@ class ProjectItem extends React.Component {
                         {
                             !this.state.showDetails ?
                             'show details' : 'hide details'
-                        }</button>
+                        }
+                    </button>
                     <Link to={`/issues/${id}`}>to project</Link>
+                    <button 
+                        onClick={this.deleteProject}
+                        className="del_button"
+                        >del</button>
                 </div>
                 {
                     this.state.showDetails ?

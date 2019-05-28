@@ -10,59 +10,74 @@ exports[`app render without crashing 1`] = `
         className="auth_nav"
       >
         <li
-          className="auth_item "
+          className="auth_item active"
           onClick={[Function]}
         >
           Login
         </li>
         <li
-          className="auth_item active"
+          className="auth_item "
           onClick={[Function]}
         >
           Register
         </li>
       </ul>
     </nav>
-    <div>
-      <section
-        className="login_form"
+    <section
+      className="register_form"
+    >
+      <legend>
+        Register
+      </legend>
+      <span
+        className="errors"
       >
-        <legend>
-          Login
-        </legend>
-        <div
-          className="errors"
-        >
-          
-        </div>
-        <label>
-          Name
-        </label>
-        <input
-          onChange={[Function]}
-          placeholder="name"
-          type="text"
-          value=""
-        />
-        <label>
-          Password
-        </label>
-        <input
-          onChange={[Function]}
-          placeholder="password"
-          type="password"
-          value=""
-        />
-        <button
-          className="button"
-          disabled={true}
-          onClick={[Function]}
-          type="submit"
-        >
-          Login
-        </button>
-      </section>
-    </div>
+        
+      </span>
+      <span
+        className="messages"
+      >
+        
+      </span>
+      <label>
+        Username
+      </label>
+      <input
+        className="input"
+        name="username"
+        onChange={[Function]}
+        placeholder="username"
+        type="text"
+        value=""
+      />
+      <label>
+        Email
+      </label>
+      <input
+        className="input"
+        name="email"
+        onChange={[Function]}
+        placeholder="email"
+        type="email"
+        value=""
+      />
+      <label>
+        Password
+      </label>
+      <input
+        className="input"
+        name="passowrd"
+        onChange={[Function]}
+        placeholder="password"
+        type="password"
+        value=""
+      />
+      <button
+        onClick={[Function]}
+      >
+        register
+      </button>
+    </section>
   </section>
 </main>
 `;
