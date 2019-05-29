@@ -111,6 +111,7 @@ class Register extends React.Component{
                     value={this.state.user.password}
                     placeholder="password"/>
                 <button 
+                className="button register_button"
                 disabled={this.state.user.username === ''}
                 onClick={this.handleSubmit}>register</button>
             </section>

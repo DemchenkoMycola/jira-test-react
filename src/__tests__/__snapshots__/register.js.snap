@@ -51,6 +51,8 @@ exports[`register render register form 1`] = `
     value=""
   />
   <button
+    className="button register_button"
+    disabled={true}
     onClick={[Function]}
   >
     register

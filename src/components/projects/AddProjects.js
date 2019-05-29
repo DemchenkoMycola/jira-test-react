@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as projectsAction from '../../actions/projectsAction';
-
+import { MdClear } from 'react-icons/md';
 
 class AddProject extends React.Component{
      
@@ -50,8 +50,8 @@ class AddProject extends React.Component{
         return (
             <div className="modal">
                 <button 
-                className="button close_modal" 
-                onClick={this.props.showModal}>close</button>
+                className="close_modal icon_button" 
+                onClick={this.props.showModal}><MdClear /></button>
                 <form onSubmit={this.handleAdd} className="projects_form">
                     <legend>Add project</legend>
                     <label>Title</label>
@@ -75,7 +75,10 @@ class AddProject extends React.Component{
                         type="text" 
                         name="link" 
                         placeholder="link to docs"/>
-                    <button disabled={!this.state.title} type="submit">add</button>
+                    <button 
+                    className="button add_project_button"
+                    disabled={!this.state.title} 
+                    type="submit">add</button>
                 </form>
             </div>
         )

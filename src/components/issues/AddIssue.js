@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as issuesAction from '../../actions/issueActions';
-
+import { MdClear } from 'react-icons/md';
 
 class AddIssue extends React.Component{
 
@@ -32,34 +32,47 @@ class AddIssue extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
+        
         this.props.addIssue(this.state);
+        
         this.setState({
             title: '',
             description: '',
             project_id: this.props.project_id,
-        })
+        });
+
+        this.props.handleModal()
     }
 
     render(){
         return(
-            <div
-                className="issues_form">
-                <legend>Add issue</legend>
-                <label>Title</label>
-                <input
+            <div className="modal">
+                <button 
+                    className="close_modal icon_button" 
+                    onClick={this.props.handleModal}>
+                    <MdClear />
+                </button>
+                <div className="issues_form">
+                    <legend>Add issue</legend>
+                    <label>Title</label>
+                    <input
                     className="input"
                     onChange={this.handleTitle} 
                     type="text"
                     value={this.state.title}
                     placeholder="title" />
-                <label>Description</label>
-                <input
+                    <label>Description</label>
+                    <input
                     className="input"            
                     onChange={this.handleDescription} 
                     type="text" 
                     value={this.state.description}
                     placeholder="description" />
-                <button disabled={!this.state.title} onClick={this.handleSubmit} >add</button>
+                    <button 
+                    className="button add_issue_button"
+                    disabled={!this.state.title} 
+                    onClick={this.handleSubmit} >add</button>
+                </div>
             </div>
         )
     }

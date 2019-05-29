@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "1",
-      "mame": "Mycola",
+      "name": "Mycola",
       "email": "demchenkomucola@gmail.com",
       "password": "1234",
       "role": "admin"
@@ -11,6 +11,13 @@
       "id": "2",
       "name": "Leonid",
       "email": "blablabla@gmail.com",
+      "password": "4321",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "name": "Max",
+      "email": "max@gmail.com",
       "password": "4321",
       "role": "user"
     }
@@ -29,6 +36,13 @@
       "description": "description to project 3",
       "link": "http://google.com",
       "users": ["1", "2"]
+    },
+    {
+      "id": "3",
+      "title": "project test",
+      "description": "description to project 3",
+      "link": "http://google.com",
+      "users": ["1", "2", "3"]
     }
   ],
   "issues": [
@@ -80,6 +94,61 @@
       "creator_id": "1",
       "date_created": "",
       "date_updated": "",
+      "assigree": ["1", "2"]
+    },
+    {
+      "id": "6",
+      "title": "issue title",
+      "description": "Issue 1 description",
+      "project_id": "1",
+      "creator_id": "1",
+      "date_created": "Fri Jan 05 2001 00:00:00 GMT+0200 (Eastern European Standard Time)",
+      "date_updated": "",
+      "status": "in progress",
+      "assigree": ["1", "2"]
+    },
+    {
+      "id": "7",
+      "title": "issue 0 title",
+      "description": "Issue 1 description",
+      "project_id": "2",
+      "creator_id": "1",
+      "date_created": "Fri Jan 05 2001 00:00:00 GMT+0200 (Eastern European Standard Time)",
+      "date_updated": "",
+      "status": "in progress",
+      "assigree": ["1", "2"]
+    },
+    {
+      "id": "8",
+      "title": "issue 1 title",
+      "description": "Issue 1 description",
+      "project_id": "2",
+      "creator_id": "1",
+      "date_created": "Fri Jan 05 2001 00:00:00 GMT+0200 (Eastern European Standard Time)",
+      "date_updated": "",
+      "status": "todo",
+      "assigree": ["1", "2"]
+    },
+    {
+      "id": "9",
+      "title": "issue 1 title",
+      "description": "Issue 1 description",
+      "project_id": "2",
+      "creator_id": "2",
+      "date_created": "Fri Jan 05 2001 00:00:00 GMT+0200 (Eastern European Standard Time)",
+      "date_updated": "",
+      "status": "todo",
+      "assigree": ["1", "2"]
+    },
+    {
+      "id": "10",
+      "title": "issue 1 title",
+      "description": "Issue 1 description",
+      "project_id": "1",
+      "creator_id": "1",
+      "date_created": "Fri Jan 05 2001 00:00:00 GMT+0200 (Eastern European Standard Time)",
+      "date_updated": "",
+      "status": "todo",
       "assigree": ["1", "2"]
     }
   ]

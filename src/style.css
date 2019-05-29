@@ -5,6 +5,8 @@ body{
 .button{
     margin: 5px;
     border: 2px solid #0c0c0c;
+    height: 30px;
+    font-size: 21px;
 }
 
 .button:hover{
@@ -17,29 +19,39 @@ body{
   color: #fff;
 }
 
+.icon_button{
+    background: none;
+    border: none;
+}
+
 .del_button{
-    background: #fc1234;
-    color: #fff;
+    color: #fc1234;
+    font-size: 20px;
 }
 
 .del_button:hover{
-    background: #cf4321;
-    color: #fff;
+    color: #cf4321;
 }
 
 .modal{
     position: fixed;
     width: 90%;
-    height: 90%;
+    height: 50%;
     margin-left: 5%;
     margin-right: 5%;
     background: #eee;
     border: 2px solid #fefefe;
+    display: flex;
 }
 
 .close_modal{
     position: absolute;
     right: 10px;
+    font-size: 30px;
+}
+
+.close_modal:hover{
+    font-size: 35px;
 }
 
 .login_form, .register_form, .issues_form, .projects_form{

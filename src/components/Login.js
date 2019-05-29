@@ -87,7 +87,7 @@ class Login extends React.Component{
                         value={this.state.password}
                         />
                     <button 
-                    className="button" 
+                    className="button login_button" 
                     type="submit"
                     disabled={!this.state.name && !this.state.password}
                     onClick={this.handleLogin}

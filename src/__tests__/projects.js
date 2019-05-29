@@ -21,7 +21,7 @@ describe('projects', () => {
 
         const item = shallow(<ProjectItem project={project} />);
 
-        expect(item.find('.project_item')).toBeDefined();
+        expect(item).toMatchSnapshot();
 
     });
 

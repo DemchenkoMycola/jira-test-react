@@ -5,9 +5,26 @@ exports[`projects should render project from 1`] = `
   className="modal"
 >
   <button
-    className="button close_modal"
+    className="close_modal icon_button"
   >
-    close
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+      />
+    </svg>
   </button>
   <form
     className="projects_form"
@@ -47,6 +64,7 @@ exports[`projects should render project from 1`] = `
       type="text"
     />
     <button
+      className="button add_project_button"
       disabled={true}
       type="submit"
     >
@@ -55,3 +73,5 @@ exports[`projects should render project from 1`] = `
   </form>
 </div>
 `;
+
+exports[`projects should render project item 1`] = `ShallowWrapper {}`;

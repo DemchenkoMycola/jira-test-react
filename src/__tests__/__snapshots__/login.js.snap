@@ -34,7 +34,7 @@ exports[`login render login form 1`] = `
       value=""
     />
     <button
-      className="button"
+      className="button login_button"
       disabled={true}
       onClick={[Function]}
       type="submit"

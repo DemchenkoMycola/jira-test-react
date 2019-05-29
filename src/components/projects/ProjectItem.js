@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProjectDetails from './ProjectDetails'
+import { FaRegTrashAlt } from 'react-icons/fa';
 
 class ProjectItem extends React.Component {
 
@@ -44,8 +45,10 @@ class ProjectItem extends React.Component {
                     <Link to={`/issues/${id}`}>to project</Link>
                     <button 
                         onClick={this.deleteProject}
-                        className="del_button"
-                        >del</button>
+                        className="del_button icon_button"
+                        >
+                        <FaRegTrashAlt />
+                        </button>
                 </div>
                 {
                     this.state.showDetails ?

@@ -1,6 +1,7 @@
 import React from 'react';
 import Login from '../components/Login';
 import Register from '../components/Register';
+import data from '../data.json';
 
 export default class Home extends React.Component{
 
@@ -11,6 +12,13 @@ export default class Home extends React.Component{
         }
         this.handleLoginMode = this.handleLoginMode.bind(this);
         this.handleRegisterMode = this.handleRegisterMode.bind(this);
+    }
+
+    componentDidMount(){
+        const { users, projects, issues } = data;
+        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("projects", JSON.stringify(projects));
+        localStorage.setItem("issues", JSON.stringify(issues));
     }
 
     handleLoginMode(){
