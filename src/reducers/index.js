@@ -4,7 +4,7 @@ import issues from './issuesReducer';
 import users from './usersReducer';
 
 export default combineReducers({
-    projects,
-    issues,
-    users
+    projects: projects,
+    issues: issues,
+    users: users
 });

@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from './views/Home'
-import Projects from './views/Projects'
-import Issues from './views/Issues'
-import NoMatch from './views/NoMatch'
+import Home from './views/Home';
+import Projects from './views/Projects';
+import Issues from './views/Issues';
+import NoMatch from './views/NoMatch';
 
 const App = () => {
     return (
@@ -17,7 +17,6 @@ const App = () => {
           </Switch>
         </Router>
       </main>
-
     );
 }
 

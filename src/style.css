@@ -1,5 +1,14 @@
 body{
     text-align: center;
+    margin: 0;
+}
+
+.header {
+    background: #eee;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .button{
@@ -36,7 +45,7 @@ body{
 .modal{
     position: fixed;
     width: 90%;
-    height: 50%;
+    height: 90%;
     margin-left: 5%;
     margin-right: 5%;
     background: #eee;

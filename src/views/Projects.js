@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectsList from '../components/projects/ProjectsList';
 import AddProjects from '../components/projects/AddProjects';
+import Header from '../components/Header';
 
 export default class Projects extends React.Component{
 
@@ -24,6 +25,8 @@ export default class Projects extends React.Component{
     render(){
         return(
             <div>
+                <Header />
+                <main>
                 {
                     this.state.showModal ?
                         <AddProjects userId={this.state.user_id} showModal={this.showModal} />
@@ -34,6 +37,7 @@ export default class Projects extends React.Component{
                 }
                 
                 <ProjectsList userId={this.state.user_id} />
+                </main>
             </div>
         )
     }

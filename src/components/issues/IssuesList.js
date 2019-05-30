@@ -7,8 +7,6 @@ const IssuesList = (props) => {
 
     let issues = props.issues;
 
-    // Filter issues by project
-
     issues = issues.filter(issue => props.project_id === issue.project_id)
 
     const handleStatus = (id, status) => {

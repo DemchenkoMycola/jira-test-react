@@ -37,6 +37,7 @@ class Login extends React.Component{
     handleLogin(){
 
             if(this.state.user.password === this.state.password){
+                localStorage.setItem('username', this.state.user.name)
                 this.setState({
                     login: true
                 })

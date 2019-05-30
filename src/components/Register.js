@@ -67,7 +67,7 @@ class Register extends React.Component{
             })
         }else{
             e.preventDefault();
-            this.props.addUser(this.state.user)
+            this.props.addUser(this.state.user);
             this.setState({
                 errors: '',
                 messages: 'Thanks for register',
@@ -76,7 +76,8 @@ class Register extends React.Component{
                     email: '',
                     password: '',
                 }
-            })
+            });
+            this.props.handleLogin();
         }
     }
 

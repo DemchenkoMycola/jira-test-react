@@ -16,9 +16,18 @@ export default class Home extends React.Component{
 
     componentDidMount(){
         const { users, projects, issues } = data;
-        localStorage.setItem("users", JSON.stringify(users));
-        localStorage.setItem("projects", JSON.stringify(projects));
-        localStorage.setItem("issues", JSON.stringify(issues));
+
+        if(!localStorage.getItem('users')){
+            localStorage.setItem("users", JSON.stringify(users));            
+        }
+        
+        if(!localStorage.getItem('projects')){
+            localStorage.setItem("projects", JSON.stringify(projects));
+        }
+
+        if(!localStorage.getItem('issues')){
+            localStorage.setItem("issues", JSON.stringify(issues));
+        }
     }
 
     handleLoginMode(){
@@ -49,7 +58,7 @@ export default class Home extends React.Component{
                 {
                     this.state.login_mode ?
                     <Login /> :
-                    <Register />
+                    <Register handleLogin={this.handleLoginMode} />
                 }
             </section>
         )

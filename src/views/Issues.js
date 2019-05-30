@@ -1,6 +1,7 @@
 import React, { useState }  from 'react';
 import IssuesList from '../components/issues/IssuesList';
 import AddIssue from '../components/issues/AddIssue';
+import Header from '../components/Header';
 
  const Issues = (props) => {
 
@@ -16,7 +17,8 @@ import AddIssue from '../components/issues/AddIssue';
 
         return(
             <div>
-                <h1>Project id: {project_id}</h1>
+                <Header />
+                <main>
                 {
                     state.showModal ?
                     <AddIssue 
@@ -26,11 +28,12 @@ import AddIssue from '../components/issues/AddIssue';
                     <button 
                         className="button"
                         onClick={handleModal}>
-                        add issue
+                        new issue
                     </button>
                 }
                 
                 <IssuesList project_id={project_id} />
+                </main>
             </div>
         )
 }
