@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ProjectDetails from './ProjectDetails'
 import { FaRegTrashAlt } from 'react-icons/fa';
 
 class ProjectItem extends React.Component {
@@ -8,11 +7,6 @@ class ProjectItem extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = {
-            showDetails: false
-        }
-
-        this.showDetails = this.showDetails.bind(this);
         this.deleteProject = this.deleteProject.bind(this);
     }    
 
@@ -35,26 +29,21 @@ class ProjectItem extends React.Component {
             <div>
                 <div className="project_item"> 
                     <div>{title}</div>
-                    <button 
-                        onClick={this.showDetails}>
-                        {
-                            !this.state.showDetails ?
-                            'show details' : 'hide details'
-                        }
-                    </button>
-                    <Link to={`/issues/${id}`}>to project</Link>
-                    <button 
+                    <div>
+                        <Link to={`/details/${id}`} >details</Link>
+                    </div>
+                    <div>
+                        <Link to={`/issues/${id}`}>to project</Link>
+                    </div>
+                    <div>
+                        <button 
                         onClick={this.deleteProject}
                         className="del_button icon_button"
                         >
                         <FaRegTrashAlt />
                         </button>
+                    </div>
                 </div>
-                {
-                    this.state.showDetails ?
-                    <ProjectDetails project={this.props.project} />
-                    : null
-                }
             </div>
         )
     }

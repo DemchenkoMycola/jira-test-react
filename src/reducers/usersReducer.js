@@ -9,7 +9,7 @@ export default (state = initUsers, action) => {
             return [
                 ...state,
                 {
-                    id: new Date().getTime(),
+                    id: String(new Date().getTime()),
                     username: username,
                     email: email,
                     password: password

@@ -13,3 +13,19 @@ export const deleteProject = (id) => {
         id
     }
 };
+
+export const allowUser = (userId, projectId) => {
+    return {
+        type: actionTypes.ALLOW_USER,
+        userId,
+        projectId
+    }
+}
+
+export const disallowUser = (userId, projectId) => {
+    return {
+        type: actionTypes.DISALLOW_USER,
+        userId,
+        projectId
+    }
+}
