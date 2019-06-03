@@ -8,7 +8,7 @@ const ProjectsList = (props) => {
         let projects = props.projects;   
         let userId = props.userId
 
-        // Filter projects by user
+        // // Filter projects by user
 
         projects = projects.filter(project => 
         project.users.findIndex(id => id === userId) >= 0)

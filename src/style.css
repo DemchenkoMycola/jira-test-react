@@ -42,6 +42,14 @@ body{
     color: #cf4321;
 }
 
+.del_user_button{
+    font-size: 15px;
+}
+
+.add_user_button{
+    color: #28a745;
+}
+
 .modal{
     position: fixed;
     width: 90%;
@@ -81,7 +89,14 @@ body{
 
 .project_details{
     text-align: left;
+    display: flex;
+    justify-content: space-around;
     margin: 10px 50px;
+}
+
+.project_info{
+    display: flex;
+    flex-direction: column;
 }
 
 .issue_item{
@@ -124,4 +139,22 @@ body{
 
 .errors{
     color: red;
+}
+
+.allow_user{
+    font-size: 30px;
+    color: #c1a;
+}
+
+.allow_user:hover{
+    font-size: 30px;
+    color: #cba;
+}
+
+.user_item{
+    border: 1px solid #cba;
+    padding: 3px;
+    margin: 2px;
+    display: flex;
+    justify-content: space-between;
 }

@@ -26,7 +26,8 @@ class Register extends React.Component{
         let username = e.target.value
         if(this.props.users.find(user => user.name === username)){
             this.setState({
-                errors: `Username exist ${this.state.errors}`
+                errors: `Username exist ${this.state.errors}`,
+                user: {...this.state.user, username: username},
             })
         }else{
             this.setState({
