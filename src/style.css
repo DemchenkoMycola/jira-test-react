@@ -87,11 +87,22 @@ body{
     border: 2px solid #efefef;
 }
 
+.project_details_header{
+    background: #eee;
+    padding: 10px;
+}
+
 .project_details{
     text-align: left;
     display: flex;
+    flex-direction: column;
+}
+
+.project_details .details{
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    margin: 10px 50px;
+    padding: 10px;
 }
 
 .project_info{

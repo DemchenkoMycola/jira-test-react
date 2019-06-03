@@ -13,7 +13,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/projects/:userId" component={Projects} />
-            <Route path="/issues/:id" component={Issues} />
+            <Route path="/issues/:id" component={Issues} /> 
             <Route path="/details/:id" component={ProjectDetails} />
             <Route component={NoMatch} />
           </Switch>

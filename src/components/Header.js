@@ -9,7 +9,7 @@ class Header extends React.Component{
         this.state = {
             user: localStorage.getItem('username'),
         }
-
+        
         this.logout = this.logout.bind(this);
     }
 
@@ -24,6 +24,9 @@ class Header extends React.Component{
     render(){
         return(
             <header className="header">
+                            {/* <button
+            onClick={() => this.props.history.goBack()}
+            >back</button> */}
                 {
                 this.state.user !== '' ? 
                 <span>
