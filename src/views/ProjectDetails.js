@@ -9,15 +9,15 @@ const ProjectDetails = (props) => {
     const project_id = props.match.params.id;
     const project = props.projects.find(project => project.id === project_id);
 
+    // console.log(props)
+
     let {id, title, description, link, users} = project;
 
     const addUser = (userId) => {
-        // let projectId = id
         props.addUser(userId, id);
     }
 
     const deleteUser = (userId) => {
-        // console.log(id)
         props.deleteUser(userId, id);
     }
 

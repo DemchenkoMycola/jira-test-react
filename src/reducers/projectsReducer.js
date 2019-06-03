@@ -13,34 +13,35 @@ export default (state = initProjects, action) => {
                 title: title,
                 description: description,
                 link: link,
-                users
+                users: users
             }
         ];
         case actionTypes.DEL_PROJECT:
           return state.filter((data, i) => data.id !== action.id);
         case actionTypes.ALLOW_USER:
-            // state = state.map(project => {
-            //     if(project.id === action.projectId){
-            //         return {...project,
-            //             users: project.users.push(action.userId)}
-            //     }else{
-            //         return project
-            //     }
-            // })
+            state = state.map(project => {
+                if(project.id === action.projectId){
+                     return {
+                        ...project,
+                        users: [...project.users, action.userId]
+                    };
+                }else{
+                    return project
+                }
+            })
             return state;
         case actionTypes.DISALLOW_USER:
-            
-            // state = state.map(project => {
-            //     let index;
-            //     if(project.id === action.projectId){
-            //         index = project.users.findIndex(user => {
-            //             return user === action.userId
-            //         });
-            //     }
-            //     return {...project,
-            //         users: project.users.splice(index, 1)
-            //     }
-            // })
+            state = state.map(project => {
+                if(project.id === action.projectId){
+                    return {...project,
+                        users: project.users.filter(user => {
+                            return user !== action.userId
+                        })
+                    }
+                }else{
+                    return project
+                }
+            })
             return state;
         default:
           return state;
