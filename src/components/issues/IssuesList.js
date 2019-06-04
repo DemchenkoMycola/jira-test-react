@@ -1,16 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import IssueItem from './IssueItem';
-import { updateStatus } from '../../actions/issueActions';
+import { updateStatus, assigneeUser } from '../../actions/issueActions';
 
 const IssuesList = (props) => {
 
-    let issues = props.issues;
+    let {issues, projects, usersList, project_id } = props;
 
-    issues = issues.filter(issue => props.project_id === issue.project_id)
+    const project = projects.find(project => project_id === project.id)
+    const { users } = project;
+
+    issues = issues.filter(issue => project_id === issue.project_id)
 
     const handleStatus = (id, status) => {
         props.updateStatus(id, status);
+    }
+
+    const assigneeUser = (issueId, userId) => {
+        props.assigneeUser(issueId, userId);
     }
 
     return (
@@ -22,6 +29,9 @@ const IssuesList = (props) => {
                         key={`${issue.id}${issue.title}`} 
                         issue={issue}
                         handleStatus={handleStatus}
+                        users={users}
+                        usersList={usersList}
+                        assigneeUser={assigneeUser}
                         />   
                 )
             :
@@ -33,13 +43,16 @@ const IssuesList = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        updateStatus: (id, status) => dispatch(updateStatus(id, status))
+        updateStatus: (id, status) => dispatch(updateStatus(id, status)),
+        assigneeUser: (issueId, userId) => dispatch(assigneeUser(issueId, userId))
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        issues: state.issues
+        issues: state.issues,
+        projects: state.projects,
+        usersList: state.users
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(IssuesList);

@@ -8,7 +8,7 @@ class Register extends React.Component{
         super(props);
         this.state = {
             user: {
-                username: '',
+                name: '',
                 email: '',
                 password: '',
             },
@@ -27,11 +27,11 @@ class Register extends React.Component{
         if(this.props.users.find(user => user.name === username)){
             this.setState({
                 errors: `Username exist ${this.state.errors}`,
-                user: {...this.state.user, username: username},
+                user: {...this.state.user, name: username},
             })
         }else{
             this.setState({
-                user: {...this.state.user, username: username},
+                user: {...this.state.user, name: username},
                 errors: ''
             })
         }
@@ -43,7 +43,8 @@ class Register extends React.Component{
 
         if(this.props.users.find(user => user.email === email)){
             this.setState({
-                errors: `Chose another email ${this.state.errors}`
+                errors: `Chose another email ${this.state.errors}`,
+                user: {...this.state.user, email: e.target.value}
             })
         }else{
             this.setState({

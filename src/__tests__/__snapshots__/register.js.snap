@@ -26,7 +26,6 @@ exports[`register render register form 1`] = `
     onChange={[Function]}
     placeholder="username"
     type="text"
-    value=""
   />
   <label>
     Email
@@ -52,7 +51,7 @@ exports[`register render register form 1`] = `
   />
   <button
     className="button register_button"
-    disabled={true}
+    disabled={false}
     onClick={[Function]}
   >
     register

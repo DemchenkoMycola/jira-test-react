@@ -8,10 +8,17 @@ export const createIssue = (issue) => {
 };
 
 export const updateStatus = (issue_id, status) => {
-    // console.log(issue_id, status)
     return{
         type: actionTypes.UPDATE_STATUS,
         issue_id,
         status
+    }
+};
+
+export const assigneeUser = (issueId, userId) => {
+    return{ 
+        type: actionTypes.ASSIGNEE_USER,
+        issueId,
+        userId 
     }
 };

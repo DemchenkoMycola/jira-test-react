@@ -21,6 +21,11 @@ export default (state = initIssues, action) => {
             issue.id === action.issue_id ?
             {...issue, status: action.status, date_updated: String(date)} : issue
           );
+        case actionTypes.ASSIGNEE_USER: 
+            return state.map(issue => 
+              issue.id === action.issueId ? 
+              {...issue, assignee: action.userId, date_updated: String(date)} : issue
+            );
         default:
           return state;
     }

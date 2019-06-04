@@ -7,5 +7,6 @@ export const DISALLOW_USER = 'DISALLOW_USER'
 export const GET_ALL_ISSUES = 'GET_ALL_ISSUES'
 export const ADD_ISSUE = 'ADD_ISSUE'
 export const UPDATE_STATUS = 'UPDATE_STATUS'
+export const ASSIGNEE_USER = 'ASSIGNEE_USER'
 
 export const ADD_USER = 'ADD_USER'

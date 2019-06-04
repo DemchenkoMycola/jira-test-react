@@ -27,7 +27,17 @@ describe('issues', () => {
             "assigree": ["1", "2"]
           };
 
-          const item = shallow(<IssueItem issue={issue} />);
+          const usersList = [
+            {
+                "id": "1",
+                "name": "Mycola",
+                "email": "demchenkomucola@gmail.com",
+                "password": "1234",
+                "role": "admin"
+            }
+          ];
+          const users = ['1'];
+          const item = shallow(<IssueItem users={users} issue={issue} usersList={usersList} />);
           expect(item).toMatchSnapshot();
 
     });
