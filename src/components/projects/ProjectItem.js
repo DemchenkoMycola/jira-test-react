@@ -27,15 +27,15 @@ class ProjectItem extends React.Component {
 
         return(
             <div>
-                <div className="project_item"> 
-                    <div>{title}</div>
-                    <div>
+                <div className="project_item row"> 
+                    <div className="col">{title}</div>
+                    <div className="col">
                         <Link to={`/details/${id}`} >details</Link>
                     </div>
-                    <div>
+                    <div className="col">
                         <Link to={`/issues/${id}`}>to project</Link>
                     </div>
-                    <div>
+                    <div className="col">
                         <button 
                         onClick={this.deleteProject}
                         className="del_button icon_button"

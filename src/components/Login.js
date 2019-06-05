@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { loginUser } from '../actions/userActions';
 
 class Login extends React.Component{
     constructor(props){
@@ -36,7 +37,7 @@ class Login extends React.Component{
     handleLogin(){
 
             if(this.state.user.password === this.state.password){ 
-                localStorage.setItem('username', this.state.user.name)
+                this.props.loginUser(this.state.user);
                 this.setState({
                     login: true
                 })
@@ -98,11 +99,18 @@ class Login extends React.Component{
     }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        loginUser: user => dispatch(loginUser(user))
+    }
+}
+
 const mapStateToProps = (state) => {
     return{
-        users: state.users
+        users: state.users,
+        user: state.user
     }
 }
 
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

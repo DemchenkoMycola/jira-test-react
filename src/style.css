@@ -3,12 +3,25 @@ body{
     margin: 0;
 }
 
+
 .header {
     background: #eee;
     padding: 20px;
+}
+
+.header_content{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.col{
+    flex: 1;
 }
 
 .button{
@@ -80,8 +93,6 @@ body{
 }
 
 .project_item{
-    display: flex;
-    justify-content: space-between;
     margin: 10px;
     padding: 10px;
     border: 2px solid #efefef;
@@ -113,9 +124,7 @@ body{
 .issue_item{
     border: 3px solid #0c0c0c;
     margin: 10px;
-    display: flex;
     padding: 10px;
-    justify-content: space-between;
 }
 
 .auth_section{
@@ -168,4 +177,10 @@ body{
     margin: 2px;
     display: flex;
     justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+    .issue_item{
+        flex-direction: column;
+    }
 }

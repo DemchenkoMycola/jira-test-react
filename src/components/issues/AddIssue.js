@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as issuesAction from '../../actions/issueActions';
+import { createIssue } from '../../actions/issueActions';
 import { MdClear } from 'react-icons/md';
 
 class AddIssue extends React.Component{
@@ -11,6 +11,7 @@ class AddIssue extends React.Component{
             title: '',
             description: '',
             project_id: props.project_id,
+            assignee: this.props.user.id
         }
 
         this.handleTitle = this.handleTitle.bind(this);
@@ -81,8 +82,14 @@ class AddIssue extends React.Component{
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addIssue: issue => dispatch(issuesAction.createIssue(issue))
+        addIssue: issue => dispatch(createIssue(issue))
     }
 }
 
-export default connect(null, mapDispatchToProps)(AddIssue);
+const mapStateToProps = (state) => {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddIssue);

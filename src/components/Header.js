@@ -1,5 +1,7 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import {connect} from 'react-redux';
+import { Redirect, Link } from 'react-router-dom';
+import { logoutUser } from '../actions/userActions';
 
 class Header extends React.Component{
 
@@ -7,37 +9,49 @@ class Header extends React.Component{
         super(props);
 
         this.state = {
-            user: localStorage.getItem('username'),
+            user: this.props.user
         }
-        
+
         this.logout = this.logout.bind(this);
     }
 
     logout(){
-        localStorage.removeItem('username');
         this.setState({
-            user: ''
-        })
+            user: null
+        });
+        this.props.logoutUser();
     }
-
 
     render(){
         return(
             <header className="header">
-                            {/* <button
-            onClick={() => this.props.history.goBack()}
-            >back</button> */}
                 {
-                this.state.user !== '' ? 
-                <span>
-                {this.state.user}
-                <button onClick={this.logout}>logout</button>
-                </span> :
+                this.state.user ? 
+                <div className="header_content">
+                    <Link to={`/projects/${this.state.user.id}`}>Projects</Link>
+                    <span>{this.state.user.name }
+                        <button onClick={this.logout}>logout</button>
+                    </span>
+                    
+                </div>
+                :
                 <Redirect to="/" />
                 }
-
             </header>
         )
     }
 }
-export default Header;
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.user
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        logoutUser: () => dispatch(logoutUser())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

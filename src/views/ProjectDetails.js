@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import UsersList from '../components/users/UsersList';
 import { FaUserPlus } from 'react-icons/fa';
 import { allowUser, disallowUser } from '../actions/projectsAction';
+import Header from '../components/Header';
 
 const ProjectDetails = (props) => {
 
@@ -30,12 +31,9 @@ const ProjectDetails = (props) => {
     }
 
     return(
+        <div>
+        <Header />
         <main className="project_details">
-            <section className="project_details_header">
-                <button
-                    onClick={() =>props.history.goBack()}
-                >back</button>
-            </section>
             <section className="details">
                 <div className="project_info">
                     <p>Project name:  {title}</p>
@@ -61,9 +59,10 @@ const ProjectDetails = (props) => {
                         usersAllowed={users} />
                     : null
                     }
-                </div>
-            </section>
-        </main>
+                    </div>
+                </section>
+            </main>
+        </div>
     )
 }
 

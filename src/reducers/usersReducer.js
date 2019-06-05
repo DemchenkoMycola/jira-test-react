@@ -12,7 +12,7 @@ export default (state = initUsers, action) => {
                     id: String(new Date().getTime()),
                     name: username,
                     email: email,
-                    password: password
+                    password: password,
                 }
             ]
         default: 

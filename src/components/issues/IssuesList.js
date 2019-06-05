@@ -22,6 +22,12 @@ const IssuesList = (props) => {
 
     return (
         <div>
+            <div className="row">
+                <div className="col">title</div>
+                <div className="col">desctiption</div>
+                <div className="col">status</div>
+                <div className="col">Assignee</div>
+            </div>
             {
             issues.length > 0 ?
                 issues.map(issue => 

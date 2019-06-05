@@ -6,10 +6,12 @@ export default (state = initIssues, action) => {
     let date = new Date(2000, 12, 5);
     switch (action.type){
         case actionTypes.ADD_ISSUE:
-          let {title, description, project_id} = action.issue;
+          let {title, description, project_id, assignee} = action.issue;
           return [
             ...state,
             {
+              id: toString(date),
+              assignee: assignee,
               title: title,
               description: description,
               project_id: project_id,
