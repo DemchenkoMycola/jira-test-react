@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import IssueItem from './IssueItem';
 import { updateStatus, assigneeUser } from '../../actions/issueActions';
@@ -10,7 +10,10 @@ const IssuesList = (props) => {
     const project = projects.find(project => project_id === project.id)
     const { users } = project;
 
-    issues = issues.filter(issue => project_id === issue.project_id)
+    const [state, setState] = useState({
+        issues: issues.filter(issue => project_id === issue.project_id),
+        status: 'todo'
+    })
 
     const handleStatus = (id, status) => {
         props.updateStatus(id, status);
@@ -20,8 +23,32 @@ const IssuesList = (props) => {
         props.assigneeUser(issueId, userId);
     }
 
+    const sortByStatus = (e) => {
+        let status = e.target.value
+        setState({
+            issues: issues.filter(issue => {
+                // console.log(issue.status, status)
+                return project_id === issue.project_id && issue.status === status}),
+            status: status
+        })
+    }
+
     return (
         <div>
+            <div className="row">
+                <div className="col">
+                    <button className="button new_issue" onClick={props.handleModal}>
+                    new issue
+                    </button>
+                </div>
+                <div className="col">
+                <select value={state.status} onChange={sortByStatus}>
+                    <option value="todo">to do</option>
+                    <option value="in progress">in progress</option>
+                    <option value="completed">completed</option>
+                </select>
+                </div>
+            </div>
             <div className="row">
                 <div className="col">title</div>
                 <div className="col">desctiption</div>
@@ -29,8 +56,8 @@ const IssuesList = (props) => {
                 <div className="col">Assignee</div>
             </div>
             {
-            issues.length > 0 ?
-                issues.map(issue => 
+            state.issues.length > 0 ?
+                state.issues.map(issue => 
                         <IssueItem 
                         key={`${issue.id}${issue.title}`} 
                         issue={issue}

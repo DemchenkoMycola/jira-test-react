@@ -5,7 +5,6 @@ export default (state = null, action ) => {
         case actionTypes.LOGIN_USER:
             return state = action.user;
         case actionTypes.LOGOUT_USER:
-            // console.log('logout')
             return state = null
         default: 
             return state;

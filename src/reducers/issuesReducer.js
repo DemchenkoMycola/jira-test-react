@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 const initIssues = JSON.parse(localStorage.getItem("issues"));
 
 export default (state = initIssues, action) => {
-    let date = new Date(2000, 12, 5);
+    let date = new Date();
     switch (action.type){
         case actionTypes.ADD_ISSUE:
           let {title, description, project_id, assignee} = action.issue;
@@ -15,7 +15,8 @@ export default (state = initIssues, action) => {
               title: title,
               description: description,
               project_id: project_id,
-              date_created: String(date),
+              status: 'todo',
+              date_created: String(date.getTime()),
             }
           ];
         case actionTypes.UPDATE_STATUS: 

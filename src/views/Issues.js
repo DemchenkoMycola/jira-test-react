@@ -25,14 +25,12 @@ import Header from '../components/Header';
                     project_id={project_id}
                     handleModal={handleModal} />
                     :
-                    <button 
-                        className="button"
-                        onClick={handleModal}>
-                        new issue
-                    </button>
+                    ''
                 }
-                
-                <IssuesList project_id={project_id} />
+                <IssuesList 
+                    handleModal={handleModal}
+                    project_id={project_id}
+                    />
                 </main>
             </div>
         )

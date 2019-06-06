@@ -5,8 +5,6 @@ const IssueItem = (props) => {
     const { users, usersList, issue } = props
     const {id, title, description, status, assignee} = issue;
 
-    console.log(assignee)
-
     const assigneeUsers = usersList.filter(user => 
         users.find(i => i === user.id)
     )
