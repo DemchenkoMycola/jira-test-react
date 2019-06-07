@@ -55,7 +55,8 @@
       "date_created": "",
       "date_updated": "",
       "status": "todo",
-      "assignee": "2"
+      "assignee": "2",
+      "priority": "high"
     },
     {
       "id": "2",
@@ -66,7 +67,8 @@
       "date_created": "",
       "date_updated": "",
       "status": "todo",
-      "assignee": "1"
+      "assignee": "1",
+      "priority": "low"
     },
     {
       "id": "3",
@@ -77,7 +79,8 @@
       "date_created": "",
       "date_updated": "",
       "status": "todo",
-      "assignee": "1"
+      "assignee": "1",
+      "priority": "medium"
     },
     {
       "id": "4",
@@ -88,7 +91,8 @@
       "date_created": "",
       "date_updated": "",
       "status": "todo",
-      "assignee": "1"
+      "assignee": "1",
+      "priority": "high"
     },
     {
       "id": "5",
@@ -99,7 +103,8 @@
       "date_created": "",
       "date_updated": "",
       "status": "todo",
-      "assignee": "1"
+      "assignee": "1",
+      "priority": "low"
     },
     {
       "id": "6",
@@ -110,7 +115,8 @@
       "date_created": "Fri Jan 05 2001 00:00:00 GMT+0200 (Eastern European Standard Time)",
       "date_updated": "",
       "status": "in progress",
-      "assignee": "1"
+      "assignee": "1",
+      "priority": "high"
     },
     {
       "id": "7",
@@ -121,7 +127,8 @@
       "date_created": "Fri Jan 05 2001 00:00:00 GMT+0200 (Eastern European Standard Time)",
       "date_updated": "",
       "status": "in progress",
-      "assignee": "1"
+      "assignee": "1",
+      "priority": "medium"
     },
     {
       "id": "8",
@@ -132,7 +139,8 @@
       "date_created": "Fri Jan 05 2001 00:00:00 GMT+0200 (Eastern European Standard Time)",
       "date_updated": "",
       "status": "todo",
-      "assignee": "2"
+      "assignee": "2",
+      "priority": "medium"
     },
     {
       "id": "9",
@@ -143,7 +151,8 @@
       "date_created": "Fri Jan 05 2001 00:00:00 GMT+0200 (Eastern European Standard Time)",
       "date_updated": "",
       "status": "todo",
-      "assignee": "2"
+      "assignee": "2",
+      "priority": "high"
     },
     {
       "id": "10",
@@ -154,7 +163,8 @@
       "date_created": "Fri Jan 05 2001 00:00:00 GMT+0200 (Eastern European Standard Time)",
       "date_updated": "",
       "status": "todo",
-      "assignee": "1"
+      "assignee": "1",
+      "priority": "high"
     }
   ]
 }

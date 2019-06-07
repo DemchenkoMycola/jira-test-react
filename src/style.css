@@ -179,6 +179,23 @@ body{
     justify-content: space-between;
 }
 
+.priority_select{
+    width: 100%;
+    color: #fff;
+}
+
+.priority_high{
+    background: #cf4321;
+}
+
+.priority_medium{
+    background: orange;
+}
+
+.priority_low{
+    background: #28a745;
+}
+
 @media only screen and (max-width: 768px) {
     .issue_item{
         flex-direction: column;

@@ -3,7 +3,7 @@ import React from 'react';
 const IssueItem = (props) => {
  
     const { users, usersList, issue } = props
-    const {id, title, description, status, assignee} = issue;
+    const {id, title, description, status, assignee, priority} = issue;
 
     const assigneeUsers = usersList.filter(user => 
         users.find(i => i === user.id)
@@ -20,6 +20,11 @@ const IssueItem = (props) => {
     const handleAssignee = (e) => {
         let userId = e.target.value
         props.assigneeUser(id, userId);
+    }
+
+    const handlePriority = (e) => {
+        let priority = e.target.value;
+        props.changePriority(id, priority);
     }
 
     return (
@@ -43,6 +48,13 @@ const IssueItem = (props) => {
                         >{user.name}</option> 
                     )
                 }
+                </select>
+            </div>
+            <div className="col">
+                <select className={`priority_select priority_${priority}`} value={priority} onChange={handlePriority}>
+                    <option value="high">high</option>
+                    <option value="medium">medium</option>
+                    <option value="low">low</option>
                 </select>
             </div>
         </div>

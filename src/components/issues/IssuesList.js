@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import IssueItem from './IssueItem';
-import { updateStatus, assigneeUser } from '../../actions/issueActions';
+import { updateStatus, assigneeUser, changePriority } from '../../actions/issueActions';
 
 const IssuesList = (props) => {
 
@@ -10,10 +10,7 @@ const IssuesList = (props) => {
     const project = projects.find(project => project_id === project.id)
     const { users } = project;
 
-    const [state, setState] = useState({
-        issues: issues.filter(issue => project_id === issue.project_id),
-        status: 'todo'
-    })
+    issues = issues.filter(issue => project_id === issue.project_id)
 
     const handleStatus = (id, status) => {
         props.updateStatus(id, status);
@@ -23,30 +20,17 @@ const IssuesList = (props) => {
         props.assigneeUser(issueId, userId);
     }
 
-    const sortByStatus = (e) => {
-        let status = e.target.value
-        setState({
-            issues: issues.filter(issue => {
-                // console.log(issue.status, status)
-                return project_id === issue.project_id && issue.status === status}),
-            status: status
-        })
+    const changePriority = (issueId, priority) => {
+        props.changePriority(issueId, priority);
     }
 
     return (
         <div>
             <div className="row">
                 <div className="col">
-                    <button className="button new_issue" onClick={props.handleModal}>
-                    new issue
-                    </button>
-                </div>
-                <div className="col">
-                <select value={state.status} onChange={sortByStatus}>
-                    <option value="todo">to do</option>
-                    <option value="in progress">in progress</option>
-                    <option value="completed">completed</option>
-                </select>
+                     <button className="button new_issue" onClick={props.handleModal}>
+                     new issue
+                     </button>
                 </div>
             </div>
             <div className="row">
@@ -56,15 +40,16 @@ const IssuesList = (props) => {
                 <div className="col">Assignee</div>
             </div>
             {
-            state.issues.length > 0 ?
-                state.issues.map(issue => 
+            issues.length > 0 ?
+                issues.map(issue => 
                         <IssueItem 
                         key={`${issue.id}${issue.title}`} 
                         issue={issue}
-                        handleStatus={handleStatus}
                         users={users}
                         usersList={usersList}
                         assigneeUser={assigneeUser}
+                        handleStatus={handleStatus}
+                        changePriority={changePriority}
                         />   
                 )
             :
@@ -77,7 +62,8 @@ const IssuesList = (props) => {
 const mapDispatchToProps = (dispatch) => {
     return{
         updateStatus: (id, status) => dispatch(updateStatus(id, status)),
-        assigneeUser: (issueId, userId) => dispatch(assigneeUser(issueId, userId))
+        assigneeUser: (issueId, userId) => dispatch(assigneeUser(issueId, userId)),
+        changePriority: (issueId, priority) => dispatch(changePriority(issueId, priority))
     }
 }
 

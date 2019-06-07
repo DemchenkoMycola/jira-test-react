@@ -15,6 +15,14 @@ export const updateStatus = (issue_id, status) => {
     }
 };
 
+export const changePriority = (issueId, priority) => {
+    return{
+        type: actionTypes.CHANGE_PRIORITY,
+        issueId,
+        priority
+    }
+}
+
 export const assigneeUser = (issueId, userId) => {
     return{ 
         type: actionTypes.ASSIGNEE_USER,

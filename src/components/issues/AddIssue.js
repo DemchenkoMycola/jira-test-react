@@ -11,12 +11,14 @@ class AddIssue extends React.Component{
             title: '',
             description: '',
             project_id: props.project_id,
-            assignee: this.props.user.id
+            assignee: this.props.user.id,
+            priority: 'low'
         }
 
         this.handleTitle = this.handleTitle.bind(this);
         this.handleDescription = this.handleDescription.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.changePriority = this.changePriority.bind(this);
     }
 
     handleTitle(e){
@@ -30,7 +32,6 @@ class AddIssue extends React.Component{
             description: e.target.value
         })
     }
-
     handleSubmit(e){
         e.preventDefault();
         
