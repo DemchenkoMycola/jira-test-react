@@ -3,9 +3,25 @@ import { connect } from 'react-redux';
 import * as projectsAction from '../../actions/projectsAction';
 import { MdClear } from 'react-icons/md';
 
-class AddProject extends React.Component{
+interface Props{
+    userId: string,
+    createProject: (project: any) => void,
+    showModal: () => void
+}
+
+interface State{
+    title: string,
+    description: string,
+    link: string,
+    users: string[]
+}
+
+type ButtonEvent = React.MouseEvent<HTMLButtonElement>;
+type InputEvent = React.ChangeEvent<HTMLInputElement>;
+
+class AddProject extends React.Component<Props, State>{
      
-    constructor(props){
+    constructor(props: Props){
         super(props);
 
         this.state = {
@@ -21,25 +37,25 @@ class AddProject extends React.Component{
         this.handleLink = this.handleLink.bind(this);
     }
 
-    handleTitle(e){
+    handleTitle(e: InputEvent){
         this.setState({
            title: e.target.value
         })
     }
 
-    handleDescription(e){
+    handleDescription(e: InputEvent){
         this.setState({
             description: e.target.value
          })
     }
 
-    handleLink(e){
+    handleLink(e:InputEvent){
         this.setState({
             link: e.target.value
          })
     }
 
-    handleAdd(e){
+    handleAdd(e: ButtonEvent){
         e.preventDefault();
         // console.log(this.state)
         this.props.createProject(this.state);
@@ -52,7 +68,7 @@ class AddProject extends React.Component{
                 <button 
                 className="close_modal icon_button" 
                 onClick={this.props.showModal}><MdClear /></button>
-                <form onSubmit={this.handleAdd} className="projects_form">
+                <form className="projects_form">
                     <legend>Add project</legend>
                     <label>Title</label>
                     <input 
@@ -78,6 +94,7 @@ class AddProject extends React.Component{
                     <button 
                     className="button add_project_button"
                     disabled={!this.state.title} 
+                    onClick={this.handleAdd}
                     type="submit">add</button>
                 </form>
             </div>
@@ -85,9 +102,9 @@ class AddProject extends React.Component{
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return{ 
-        createProject: project => dispatch(projectsAction.createProject(project))
+        createProject: (project: any) => dispatch(projectsAction.createProject(project))
     }
 }
 

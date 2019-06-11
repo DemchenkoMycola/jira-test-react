@@ -2,9 +2,30 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addUser } from '../actions/userActions';
 
-class Register extends React.Component{
+interface User {
+    name: string,
+    email: string,
+    password: string
+}
 
-    constructor(props){
+interface Props {
+    users: object[],
+    addUser: (user: any) => void,
+    handleLogin: () => void
+}
+
+interface State {
+    errors: string,
+    user: User,
+    messages: string
+}
+
+type InputEvent = React.ChangeEvent<HTMLInputElement>;
+type ButtonEvent = React.MouseEvent<HTMLButtonElement>;
+
+class Register extends React.Component<Props, State>{
+
+    constructor(props: any){
         super(props);
         this.state = {
             user: {
@@ -22,9 +43,9 @@ class Register extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleName(e){        
+    handleName(e: InputEvent){        
         let username = e.target.value
-        if(this.props.users.find(user => user.name === username)){
+        if(this.props.users.find((user: any) => user.name === username)){
             this.setState({
                 errors: `Username exist ${this.state.errors}`,
                 user: {...this.state.user, name: username},
@@ -37,11 +58,11 @@ class Register extends React.Component{
         }
     }
 
-    handleEmail(e){
+    handleEmail(e: InputEvent){
 
         let email = e.target.value;
 
-        if(this.props.users.find(user => user.email === email)){
+        if(this.props.users.find((user: any) => user.email === email)){
             this.setState({
                 errors: `Chose another email ${this.state.errors}`,
                 user: {...this.state.user, email: e.target.value}
@@ -55,14 +76,14 @@ class Register extends React.Component{
 
     }
 
-    handlePassword(e){
+    handlePassword(e: InputEvent){
         e.preventDefault();
         this.setState({
             user: {...this.state.user, password: e.target.value}
         })
     }
 
-    handleSubmit(e){
+    handleSubmit(e: ButtonEvent){
         if(this.state.errors !== ''){
             this.setState({
                 errors: `Please fix errors  \n ${this.state.errors}` 
@@ -74,7 +95,7 @@ class Register extends React.Component{
                 errors: '',
                 messages: 'Thanks for register',
                 user: {
-                    username: '',
+                    name: '',
                     email: '',
                     password: '',
                 }
@@ -95,7 +116,7 @@ class Register extends React.Component{
                     onChange={this.handleName} 
                     type="text" 
                     name="username"
-                    value={this.state.user.username}
+                    value={this.state.user.name}
                     placeholder="username" />
                 <label>Email</label>
                 <input 
@@ -115,20 +136,20 @@ class Register extends React.Component{
                     placeholder="password"/>
                 <button 
                 className="button register_button"
-                disabled={this.state.user.username === ''}
+                disabled={this.state.user.name === ''}
                 onClick={this.handleSubmit}>register</button>
             </section>
         )
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return {
-        addUser: user => dispatch(addUser(user))
+        addUser: (user: User) => dispatch(addUser(user))
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
     return{
         users: state.users
     }

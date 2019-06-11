@@ -2,19 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegTrashAlt } from 'react-icons/fa';
 
-class ProjectItem extends React.Component {
+interface Project {
+    id: string,
+    title: string
+}
 
-    constructor(props){
+interface Props{
+    project: Project,
+    deleteProject: (id: string) => void
+}
+
+class ProjectItem extends React.Component<Props> {
+
+    constructor(props: any){
         super(props);
 
         this.deleteProject = this.deleteProject.bind(this);
     }    
-
-    showDetails(){
-        this.setState({
-            showDetails: !this.state.showDetails
-        })
-    }
 
     deleteProject(){
         let id = this.props.project.id;

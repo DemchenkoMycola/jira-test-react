@@ -3,26 +3,26 @@ import { connect } from 'react-redux';
 import { FaRegTrashAlt, FaPlusSquare } from 'react-icons/fa';
 
 
-const UsersLst = (props) => {
+const UsersLst = (props: any) => {
 
     let {users, allowed, usersAllowed} = props
 
     if(allowed){
-        users = users.filter(user => usersAllowed.findIndex(id => id === user.id) >= 0)
+        users = users.filter((user: any) => usersAllowed.findIndex((id: string) => id === user.id) >= 0)
     }else{
-        users = users.filter(user => usersAllowed.findIndex(id => id === user.id) < 0)
+        users = users.filter((user: any) => usersAllowed.findIndex((id: string) => id === user.id) < 0)
     }
 
-    const addUser = (id) => {
+    const addUser = (id: string) => {
         props.addUser(id)
     }
 
-    const deleteUser = (id) => {
+    const deleteUser = (id: string) => {
         props.deleteUser(id)
     }
 
     return (
-        users.map((user) => {
+        users.map((user: any) => {
             return (
                 <div className="user_item" key={`${user.name}${user.id}`}>
                         <span>
@@ -47,7 +47,7 @@ const UsersLst = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
     return{
         users: state.users
     }

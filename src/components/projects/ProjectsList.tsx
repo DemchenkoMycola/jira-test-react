@@ -3,17 +3,17 @@ import { connect } from 'react-redux';
 import ProjectItem from './ProjectItem';
 import { deleteProject } from '../../actions/projectsAction';
 
-const ProjectsList = (props) => {
+const ProjectsList = (props: any) => {
 
         let projects = props.projects;   
         let userId = props.userId
 
         // // Filter projects by user
 
-        projects = projects.filter(project => 
-        project.users.findIndex(id => id === userId) >= 0)
+        projects = projects.filter((project: any)=> 
+        project.users.findIndex((id: string) => id === userId) >= 0)
 
-        const delProject = (id) => {
+        const delProject = (id: string) => {
             props.deleteProject(id)
         }
 
@@ -21,11 +21,10 @@ const ProjectsList = (props) => {
             <div>
                {
                 projects.length > 0 ?
-                projects.map((project, index) => 
+                projects.map((project: any) => 
                         <ProjectItem 
                             key={`${project.id}${project.name}`}
                             project={project}
-                            index={index}
                             deleteProject={delProject}
                         />
                     )
@@ -37,13 +36,13 @@ const ProjectsList = (props) => {
         )
 } 
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return {
-        deleteProject: (id) => dispatch(deleteProject(id))
+        deleteProject: (id: string) => dispatch(deleteProject(id))
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
     return {
         projects: state.projects
     }

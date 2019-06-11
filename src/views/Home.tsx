@@ -3,9 +3,15 @@ import Login from '../components/Login';
 import Register from '../components/Register';
 import data from '../data.json';
 
-export default class Home extends React.Component{
+interface Props {}
 
-    constructor(props){
+interface State {
+    login_mode: boolean
+}
+
+export default class Home extends React.Component<Props, State>{
+
+    constructor(props: any){
         super(props);
         this.state = {
             login_mode: true

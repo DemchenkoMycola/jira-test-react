@@ -3,15 +3,38 @@ import {connect} from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { loginUser } from '../actions/userActions';
 
-class Login extends React.Component{
-    constructor(props){
+// interface User {
+//     name: string,
+//     password: string
+// }
+
+interface Props{
+    users: object[],
+    loginUser: (user: any) => void
+}
+
+interface State {
+    name: string,
+    password: string,
+    user: any,
+    errors: string,
+    login: boolean
+}
+
+type InputEvent = React.ChangeEvent<HTMLInputElement>;
+
+class Login extends React.Component<Props, State>{
+    constructor(props: any){
         super(props);
         this.state = {
             name: '',
             password: '',
-            login: false,
-            user: {},
+            user: {
+                name: '',
+                password: ''
+            },
             errors: '',
+            login: false,
         }
 
         this.handleLogin = this.handleLogin.bind(this);
@@ -20,9 +43,9 @@ class Login extends React.Component{
         this.handleUser = this.handleUser.bind(this);
     }
 
-    handleUser(name){
+    handleUser(name: string){
         let  users  = this.props.users;
-        let user = users.find((user) => 
+        let user = users.find((user: any) => 
             user.name === name || user.email === name
         )
         
@@ -48,7 +71,7 @@ class Login extends React.Component{
             }
     }
 
-    handleName(event){
+    handleName(event: InputEvent){
         let name = event.target.value
         this.setState({
             name: name
@@ -56,7 +79,7 @@ class Login extends React.Component{
         this.handleUser(name);
     }
 
-    handlePassword(event){
+    handlePassword(event: InputEvent){
         this.setState({
             password: event.target.value
         })
@@ -99,13 +122,13 @@ class Login extends React.Component{
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return {
-        loginUser: user => dispatch(loginUser(user))
+        loginUser: (user: any)  => dispatch(loginUser(user))
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
     return{
         users: state.users,
         user: state.user

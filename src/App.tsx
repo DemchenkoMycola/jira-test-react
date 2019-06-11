@@ -5,13 +5,11 @@ import Projects from './views/Projects';
 import Issues from './views/Issues';
 import NoMatch from './views/NoMatch';
 import ProjectDetails from './views/ProjectDetails';
-// import Header from './components/Header';
 
 const App = () => {
     return (
       <main>
         <Router>
-          {/* <Header /> */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/projects/:userId" component={Projects} />

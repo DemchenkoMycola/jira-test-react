@@ -3,9 +3,18 @@ import {connect} from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import { logoutUser } from '../actions/userActions';
 
-class Header extends React.Component{
+interface State {
+    user: object | any
+}
 
-    constructor(props){
+interface Props {
+    user: object,
+    logoutUser: () => void
+}
+
+class Header extends React.Component<Props, State>{
+
+    constructor(props: any){
         super(props);
 
         this.state = {
@@ -42,13 +51,13 @@ class Header extends React.Component{
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
     return {
         user: state.user
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return {
         logoutUser: () => dispatch(logoutUser())
     }

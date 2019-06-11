@@ -3,9 +3,16 @@ import ProjectsList from '../components/projects/ProjectsList';
 import AddProjects from '../components/projects/AddProjects';
 import Header from '../components/Header';
 
-export default class Projects extends React.Component{
+interface Props {}
 
-    constructor(props){
+interface State{
+    showModal: boolean,
+    user_id: string
+}
+
+export default class Projects extends React.Component<Props, State>{
+
+    constructor(props: any){
         super(props);
         this.state = {
             showModal: false,

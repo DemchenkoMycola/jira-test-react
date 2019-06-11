@@ -18,7 +18,6 @@ class AddIssue extends React.Component{
         this.handleTitle = this.handleTitle.bind(this);
         this.handleDescription = this.handleDescription.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.changePriority = this.changePriority.bind(this);
     }
 
     handleTitle(e){

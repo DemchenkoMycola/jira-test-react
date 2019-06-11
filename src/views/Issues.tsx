@@ -3,11 +3,15 @@ import IssuesList from '../components/issues/IssuesList';
 import AddIssue from '../components/issues/AddIssue';
 import Header from '../components/Header';
 
- const Issues = (props) => {
+interface ShowModal {
+    showModal: boolean
+}
+
+ const Issues = (props: any) => {
 
         const project_id = props.match.params.id;
 
-        const [state, setState] = useState({showModal: false})
+        const [state, setState] = useState<ShowModal>({showModal: false})
 
         const handleModal = () => {
             setState({

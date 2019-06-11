@@ -5,22 +5,26 @@ import { FaUserPlus } from 'react-icons/fa';
 import { allowUser, disallowUser } from '../actions/projectsAction';
 import Header from '../components/Header';
 
-const ProjectDetails = (props) => {
+interface Project {
+    id: string
+}
+
+const ProjectDetails = (props: any) => {
 
     const [state, setState] = useState({
         allowUsers: false
     })
 
     const project_id = props.match.params.id;
-    const project = props.projects.find(project => project.id === project_id);
+    const project = props.projects.find((project: Project) => project.id === project_id);
 
     let {id, title, description, link, users} = project;
 
-    const addUser = (userId) => {
+    const addUser = (userId: string) => {
         props.addUser(userId, id);
     }
 
-    const deleteUser = (userId) => {
+    const deleteUser = (userId: string) => {
         props.deleteUser(userId, id);
     }
 
@@ -66,14 +70,14 @@ const ProjectDetails = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
     return {projects: state.projects}
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return {
-        addUser: (userId, projectId) => dispatch(allowUser(userId, projectId)),
-        deleteUser: (userId, projectId) => dispatch(disallowUser(userId, projectId))
+        addUser: (userId: string, projectId: string) => dispatch(allowUser(userId, projectId)),
+        deleteUser: (userId: string, projectId: string) => dispatch(disallowUser(userId, projectId))
     }
 }
 
