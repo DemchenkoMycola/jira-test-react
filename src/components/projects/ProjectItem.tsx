@@ -14,7 +14,7 @@ interface Props{
 
 class ProjectItem extends React.Component<Props> {
 
-    constructor(props: any){
+    constructor(props: Props){
         super(props);
 
         this.deleteProject = this.deleteProject.bind(this);

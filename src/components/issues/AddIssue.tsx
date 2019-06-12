@@ -3,9 +3,31 @@ import { connect } from 'react-redux';
 import { createIssue } from '../../actions/issueActions';
 import { MdClear } from 'react-icons/md';
 
-class AddIssue extends React.Component{
+interface User{
+    id: string
+}   
 
-    constructor(props){
+interface State{
+    title: string,
+    description: string,
+    project_id: string,
+    assignee: string,
+    priority: string
+}
+
+interface Props{
+    project_id: string,
+    user: User,
+    addIssue: (state: State) => void,
+    handleModal: () => void
+}
+
+type ButtonEvent = React.MouseEvent<HTMLButtonElement>;
+type InputEvent = React.ChangeEvent<HTMLInputElement>;
+
+class AddIssue extends React.Component<Props, State>{
+
+    constructor(props: Props){
         super(props);
         this.state = {
             title: '',
@@ -20,18 +42,18 @@ class AddIssue extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleTitle(e){
+    handleTitle(e: InputEvent){
         this.setState({
             title: e.target.value
         })
     }
 
-    handleDescription(e){
+    handleDescription(e: InputEvent){
         this.setState({
             description: e.target.value
         })
     }
-    handleSubmit(e){
+    handleSubmit(e: ButtonEvent){
         e.preventDefault();
         
         this.props.addIssue(this.state);
@@ -80,13 +102,13 @@ class AddIssue extends React.Component{
 
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return {
-        addIssue: issue => dispatch(createIssue(issue))
+        addIssue: (issue: State) => dispatch(createIssue(issue))
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
     return {
         user: state.user
     }

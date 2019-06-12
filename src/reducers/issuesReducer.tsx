@@ -1,8 +1,12 @@
 import * as actionTypes from '../actions/actionTypes';
 
-const initIssues = JSON.parse(localStorage.getItem("issues"));
+interface Issue {
+  id: string
+}
 
-export default (state = initIssues, action) => {
+const initIssues = JSON.parse(localStorage.getItem("issues") || '{}' );
+
+export default (state = initIssues, action: any) => {
     let date = new Date();
     let id = date.getTime();
     switch (action.type){
@@ -21,17 +25,17 @@ export default (state = initIssues, action) => {
             }
           ];
         case actionTypes.UPDATE_STATUS: 
-          return state.map(issue => 
+          return state.map((issue: Issue) => 
             issue.id === action.issue_id ?
             {...issue, status: action.status, date_updated: String(date)} : issue
           );
         case actionTypes.ASSIGNEE_USER: 
-            return state.map(issue => 
+            return state.map((issue: Issue) => 
               issue.id === action.issueId ? 
               {...issue, assignee: action.userId, date_updated: String(date)} : issue
             );
         case actionTypes.CHANGE_PRIORITY:
-            return state.map(issue => 
+            return state.map((issue: Issue) => 
               issue.id === action.issueId ? 
               {...issue, priority: action.priority, date_updated: String(date)} : issue
               );

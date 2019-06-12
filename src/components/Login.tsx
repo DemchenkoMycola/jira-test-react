@@ -3,11 +3,6 @@ import {connect} from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { loginUser } from '../actions/userActions';
 
-// interface User {
-//     name: string,
-//     password: string
-// }
-
 interface Props{
     users: object[],
     loginUser: (user: any) => void
@@ -24,7 +19,7 @@ interface State {
 type InputEvent = React.ChangeEvent<HTMLInputElement>;
 
 class Login extends React.Component<Props, State>{
-    constructor(props: any){
+    constructor(props: Props){
         super(props);
         this.state = {
             name: '',

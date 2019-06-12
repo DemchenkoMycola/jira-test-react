@@ -57,7 +57,6 @@ class AddProject extends React.Component<Props, State>{
 
     handleAdd(e: ButtonEvent){
         e.preventDefault();
-        // console.log(this.state)
         this.props.createProject(this.state);
         this.props.showModal();
     }

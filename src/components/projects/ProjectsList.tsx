@@ -3,7 +3,13 @@ import { connect } from 'react-redux';
 import ProjectItem from './ProjectItem';
 import { deleteProject } from '../../actions/projectsAction';
 
-const ProjectsList = (props: any) => {
+interface Props {
+    userId: string,
+    projects: object[],
+    deleteProject: (id: string) => void
+}
+
+const ProjectsList = (props: Props) => {
 
         let projects = props.projects;   
         let userId = props.userId

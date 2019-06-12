@@ -25,7 +25,7 @@ type ButtonEvent = React.MouseEvent<HTMLButtonElement>;
 
 class Register extends React.Component<Props, State>{
 
-    constructor(props: any){
+    constructor(props: Props){
         super(props);
         this.state = {
             user: {

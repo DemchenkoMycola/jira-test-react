@@ -1,8 +1,13 @@
 import * as actionTypes from '../actions/actionTypes';
 
-const initProjects = JSON.parse(localStorage.getItem("projects"));
+interface Project {
+    id: string,
+    users: object[]
+}
 
-export default (state = initProjects, action) => {
+const initProjects = JSON.parse(localStorage.getItem("projects") || '{}');
+
+export default (state = initProjects, action: any) => {
     switch (action.type){
         case actionTypes.ADD_NEW_PROJECT:
         let {title, description, link, users} = action.project;
@@ -17,9 +22,9 @@ export default (state = initProjects, action) => {
             }
         ];
         case actionTypes.DEL_PROJECT:
-          return state.filter((data, i) => data.id !== action.id);
+          return state.filter((project: Project) => project.id !== action.id);
         case actionTypes.ALLOW_USER:
-            state = state.map(project => {
+            state = state.map((project: Project) => {
                 if(project.id === action.projectId){
                      return {
                         ...project,
@@ -31,7 +36,7 @@ export default (state = initProjects, action) => {
             })
             return state;
         case actionTypes.DISALLOW_USER:
-            state = state.map(project => {
+            state = state.map((project: Project) => {
                 if(project.id === action.projectId){
                     return {...project,
                         users: project.users.filter(user => {
