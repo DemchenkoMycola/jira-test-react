@@ -3,24 +3,50 @@ import { connect } from 'react-redux';
 import IssueItem from './IssueItem';
 import { updateStatus, assigneeUser, changePriority } from '../../actions/issueActions';
 
-const IssuesList = (props) => {
+interface Project{
+    id: string,
+    users: string[]
+}
+
+interface Issue {
+    id: string,
+    title: string,  
+    project_id: string,
+    description: string,
+    status: string, 
+    assignee: string, 
+    priority: string
+}
+
+interface Props{
+    issues: Issue[],
+    projects: Project[] | any,
+    usersList: object[],
+    project_id: string,
+    updateStatus: (id: string, status: string) => void,
+    assigneeUser: (issueId: string, userId: string) => void,
+    changePriority: (issueId: string, priority: string) => void,
+    handleModal: () => void
+}
+
+const IssuesList = (props: Props) => {
 
     let {issues, projects, usersList, project_id } = props;
 
-    const project = projects.find(project => project_id === project.id)
-    const { users } = project;
+    const project = projects.find((project: Project) => project_id === project.id)
+    const users = project.users;
 
     issues = issues.filter(issue => project_id === issue.project_id)
 
-    const handleStatus = (id, status) => {
+    const handleStatus = (id: string, status: string) => {
         props.updateStatus(id, status);
     }
 
-    const assigneeUser = (issueId, userId) => {
+    const assigneeUser = (issueId: string, userId: string) => {
         props.assigneeUser(issueId, userId);
     }
 
-    const changePriority = (issueId, priority) => {
+    const changePriority = (issueId: string, priority: string) => {
         props.changePriority(issueId, priority);
     }
 
@@ -41,7 +67,7 @@ const IssuesList = (props) => {
             </div>
             {
             issues.length > 0 ?
-                issues.map(issue => 
+                issues.map((issue: Issue) => 
                         <IssueItem 
                         key={`${issue.id}${issue.title}`} 
                         issue={issue}
@@ -59,15 +85,15 @@ const IssuesList = (props) => {
     )
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
     return{
-        updateStatus: (id, status) => dispatch(updateStatus(id, status)),
-        assigneeUser: (issueId, userId) => dispatch(assigneeUser(issueId, userId)),
-        changePriority: (issueId, priority) => dispatch(changePriority(issueId, priority))
+        updateStatus: (id: string, status: string) => dispatch(updateStatus(id, status)),
+        assigneeUser: (issueId: string, userId: string) => dispatch(assigneeUser(issueId, userId)),
+        changePriority: (issueId: string, priority: string) => dispatch(changePriority(issueId, priority))
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
     return {
         issues: state.issues,
         projects: state.projects,

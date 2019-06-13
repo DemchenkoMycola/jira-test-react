@@ -7,7 +7,11 @@ interface ShowModal {
     showModal: boolean
 }
 
- const Issues = (props: any) => {
+interface Props{
+    match: any
+}
+
+ const Issues = (props: Props) => {
 
         const project_id = props.match.params.id;
 

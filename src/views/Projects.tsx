@@ -3,7 +3,9 @@ import ProjectsList from '../components/projects/ProjectsList';
 import AddProjects from '../components/projects/AddProjects';
 import Header from '../components/Header';
 
-interface Props {}
+interface Props {
+    match: any
+}
 
 interface State{
     showModal: boolean,
@@ -12,7 +14,7 @@ interface State{
 
 export default class Projects extends React.Component<Props, State>{
 
-    constructor(props: any){
+    constructor(props: Props){
         super(props);
         this.state = {
             showModal: false,

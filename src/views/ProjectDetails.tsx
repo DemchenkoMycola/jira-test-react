@@ -6,10 +6,17 @@ import { allowUser, disallowUser } from '../actions/projectsAction';
 import Header from '../components/Header';
 
 interface Project {
-    id: string
+    id: string,
 }
 
-const ProjectDetails = (props: any) => {
+interface Props{
+    match: any,
+    projects: any,
+    addUser: (userId: string, id: string) => void,
+    deleteUser: (userId: string, id: string) => void
+}
+
+const ProjectDetails = (props: Props) => {
 
     const [state, setState] = useState({
         allowUsers: false
